@@ -18,6 +18,14 @@ const Search = ({ handleQuery, isLoading }) => {
     handleQuery(query);
   };
 
+
+  const onKeyDown = (event) => {
+    event.preventDefault();
+    if(event.key === "Enter") {
+      handleQuery(query);
+    }
+  }
+
   return (
     <div className={classes.grow}>
       <AppBar position="sticky" className={classes.appBar}>
@@ -37,14 +45,18 @@ const Search = ({ handleQuery, isLoading }) => {
           <div className={classes.search}>
             <InputBase
               placeholder="Enter a search…"
+              value={query}
+              autoFocus={true}
               classes={{ root: classes.inputRoot, input: classes.inputInput }}
               inputProps={{ "aria-label": "search" }}
               onChange={(event) => setQuery(event.target.value)}
+              onKeyUp={onKeyDown}
             />
           </div>
           <div>
             <Button
               variant="contained"
+              type="submit"
               color="secondary"
               className={classes.searchButton}
               endIcon={<SearchIcon />}
