@@ -2,52 +2,57 @@ import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
+import GifIcon from "@material-ui/icons/Gif";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
-import { useSearchStyles } from "./searchStyles";
+import './Search.css';
 
-const Search = ({ handleQuery, isLoading }) => {
+
+const Search = ({ handleQuery }) => {
   const [query, setQuery] = useState("");
-  const classes = useSearchStyles();
 
   const onQuerySubmit = (event) => {
     event.preventDefault();
     handleQuery(query);
   };
 
-
   const onKeyDown = (event) => {
     event.preventDefault();
-    if(event.key === "Enter") {
+    if (event.key === "Enter") {
       handleQuery(query);
     }
-  }
+  };
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="sticky" className={classes.appBar}>
+    <div className="app-bar-container">
+      <AppBar position="sticky" className="app-bar">
         <Toolbar>
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            disableRipple={true}
+            disableFocusRipple={true}
+            disableTouchRipple={true}
+            id="gif-button"
+            href="https://giphy.com/"
+            target="_blank"
             color="inherit"
-            aria-label="open drawer"
+            aria-label="gif link"
           >
-            <MenuIcon />
+            <GifIcon fontSize="large" />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography id="gif-title" variant="h6" noWrap>
             Giphy Search
           </Typography>
 
-          <div className={classes.search}>
+          <div className="search-container">
             <InputBase
               placeholder="Enter a search…"
+              autoComplete="off"
               value={query}
               autoFocus={true}
-              classes={{ root: classes.inputRoot, input: classes.inputInput }}
+              id="search-input"
               inputProps={{ "aria-label": "search" }}
               onChange={(event) => setQuery(event.target.value)}
               onKeyUp={onKeyDown}
@@ -58,8 +63,8 @@ const Search = ({ handleQuery, isLoading }) => {
               variant="contained"
               type="submit"
               color="secondary"
-              className={classes.searchButton}
-              endIcon={<SearchIcon />}
+              id="search-button"
+              endIcon={<SearchIcon/>}
               onClick={onQuerySubmit}
             >
               Search

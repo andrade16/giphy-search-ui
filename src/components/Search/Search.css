@@ -1,0 +1,63 @@
+.app-bar-container {
+    flex-grow: 1;
+}
+
+.app-bar {
+    display: flex;
+    justify-content: center;
+}
+
+#gif-button {
+    margin-right: 16px;
+}
+
+#gif-title {
+    display: none;
+    margin-right: 25%;
+}
+
+@media(min-width: 600px) {
+    #gif-title {
+        display: block;
+    }
+}
+
+.search-container {
+    position: relative;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-right: 16px;
+    margin-left: 0;
+    width: auto;
+}
+
+.search-container:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#search-button {
+    margin: 8px
+}
+
+@media (min-width: 960px) {
+    #search-input {
+        width: 20ch;
+    }
+}
+
+#search-input {
+    font: inherit;
+    color: white;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    min-width: 0;
+    background: none;
+    box-sizing: content-box;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    padding: 8px 8px 8px calc(1em + 32px);
+}

@@ -5,25 +5,21 @@ class CachedSearch {
     this.searchFunction = searchFunction;
     this.resultsHandler = resultsHandler;
 
-    this.query = "";
     this.cache = {};
-    this.cacheHitsHistory = [];
   }
 
   changeQuery(query) {
-    if (query.length < 3) {
+    if (query.length < 3) { //Only submit a search if it's more than three characters
       this.resultsHandler([]);
       return;
     }
-    if (this.cache[query]) {
-      this.cacheHitsHistory.concat(query);
+    if (this.cache[query]) { // if search is cached, return that data;
       console.log("query retrieved from cache:", query);
       this.resultsHandler(this.cache[query]);
-    } else {
+    } else { //otherwise, make an API call for the new search
       this.searchFunction(query).then((results) => {
         this.cache[query] = results;
         console.log("query added to cache:", query);
-        // console.log('NON_CACHED_RESULTS: ', results);
         this.resultsHandler(results);
       });
     }

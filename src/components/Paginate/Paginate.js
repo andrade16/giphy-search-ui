@@ -1,15 +1,13 @@
 import React from "react";
 import Pagination from "@material-ui/lab/Pagination";
+import './Paginate.css';
 
 const Paginate = ({ currentPage, itemsPerPage, totalItems, pageSelected }) => {
-  console.log("TOTAL_ITEMS: ", totalItems);
 
-  const totalPages =
-    totalItems.length !== 0 ? Math.ceil(totalItems / itemsPerPage) : 0;
-  console.log("TOTAL_PAGES: ", totalPages);
+  const totalPages = totalItems.length !== 0 ? Math.ceil(totalItems / itemsPerPage) : 0;
 
   return (
-    <div className="paginate" style={{ overflowY: "scroll", marginTop: 5 }}>
+    <div className="paginate">
       <Pagination
         shape="rounded"
         variant="outlined"

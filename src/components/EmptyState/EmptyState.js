@@ -1,36 +1,35 @@
-import React from 'react';
+import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        overflow: "hidden",
-        backgroundColor: theme.palette.background.paper,
-        height: "70vh",
-        margin: 25,
-    },
-    gridList: {
-        width: 700,
-        height: 450,
-        backgroundColor: 'blue'
-    },
-}));
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import ImageSearchIcon from "@material-ui/icons/ImageSearch";
+import "../EmptyState/EmptyState.css";
 
 const EmptyState = () => {
-    const classes = useStyles();
-
-    return (
-        <div className={classes.root}>
-            <Container maxWidth="md">
-                <Typography component="div" className={classes.gridList} />
-            </Container>
-        </div>
-
-    )
-}
+  return (
+    <div className="empty-state-container">
+      <Container maxWidth="md">
+        <Card className="empty-state-card" variant="outlined">
+          <CardContent className="empty-state-card-content">
+            <Typography
+              id="empty-state-title"
+              color="textSecondary"
+              gutterBottom
+            >
+              No Gifs to Display!
+            </Typography>
+            <Typography>
+              <ImageSearchIcon id="search-icon" />
+            </Typography>
+            <Typography id="empty-state-subtext" color="textSecondary">
+              Go ahead and enter a new search to view gifs!
+            </Typography>
+          </CardContent>
+        </Card>
+      </Container>
+    </div>
+  );
+};
 
 export default EmptyState;

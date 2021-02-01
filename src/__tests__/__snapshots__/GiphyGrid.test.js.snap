@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GiphyGrid renders GiphyGrid correctly with gifs prop 1`] = `
+<div
+  className="giphy-grid-container"
+>
+  <ul
+    className="MuiGridList-root grid-list"
+    style={
+      Object {
+        "margin": -2,
+      }
+    }
+  >
+    <li
+      className="MuiGridListTile-root"
+      style={
+        Object {
+          "height": 164,
+          "padding": 2,
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <div
+        className="MuiGridListTile-tile"
+      >
+        <img
+          alt="Fail Seth Meyers GIF by Late Night with Seth Meyers"
+          onLoad={[Function]}
+        />
+      </div>
+    </li>
+    <li
+      className="MuiGridListTile-root"
+      style={
+        Object {
+          "height": 164,
+          "padding": 2,
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <div
+        className="MuiGridListTile-tile"
+      >
+        <img
+          alt=""
+          onLoad={[Function]}
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+`;
