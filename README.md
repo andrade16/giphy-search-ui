@@ -38,6 +38,9 @@ There were a few choices I made related to UI design that I want to point out. T
 
 - Searching: I chose to put a character threshold for when a search is executed. That threshold is 3 characters long. If the search term is less than 3 characters long, then nothing happens when a search is submitted.
   I decided to do this because it allows the giphy API to return a more reasonable number of results for a search, rather than a ridiculously large number of results based off a single character or two.
+  
+- Cache: As of right now, only the first set of search results gets cached. From there, you fetch additional data when you interact with pagination. I saw the alternative being that all data is fetched for a query on the initial search.
+  But, because a search can return thousands of gifs, this would introduce some performance issues.
 
 - Pagination: I decided to disable the pagination component while gifs are loading. This is to avoid paginating through and making new API calls while data is still loading.
 
