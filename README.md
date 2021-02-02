@@ -30,21 +30,23 @@ Using this app is pretty straightforward. Once it loads up, you're welcome to en
 
 There were a few choices I made related to UI design that I want to point out. The reasoning behind some of these choices will be explained as well.
 
-- Loading Indicator: Initially, I had implemented a skeleton loading indicator. Essentially, I chose not to display any gifs until all gifs on a page were done loading.
+- **Loading Indicator**: Initially, I had implemented a skeleton loading indicator. Essentially, I chose not to display any gifs until all gifs on a page were done loading.
   Eventually I realized that some gifs would take longer to load than others. So, with that in mind, in an effort to show the user some data (instead of none) I decided to implement a loading indicator instead.
   With the new implementation, you'll see certain gifs load faster than others, but you'll also see a progress bar that will continue to display until all gifs on a page are done loading.
   This provides the user feedback that lets them know some processing is still being done, but also shows them data when it's available.
-- Gif Display: The gifs are displayed in a basic grid, much like how they're displayed on your phone when you're searching through the gif messaging tool.
+  
+- **Gif Display**: The gifs are displayed in a basic grid, much like how they're displayed on your phone when you're searching through the gif messaging tool. 
+  Additionally, the search results count is set to 25, since this allows for a smoother loading and render experience (depending on your network connectivity).
 
-- Searching: I chose to put a character threshold for when a search is executed. That threshold is 3 characters long. If the search term is less than 3 characters long, then nothing happens when a search is submitted.
+- **Searching**: I chose to put a character threshold for when a search is executed. That threshold is 3 characters long. If the search term is less than 3 characters long, then nothing happens when a search is submitted.
   I decided to do this because it allows the giphy API to return a more reasonable number of results for a search, rather than a ridiculously large number of results based off a single character or two.
   
-- Cache: As of right now, only the first set of search results gets cached. From there, you fetch additional data when you interact with pagination. I saw the alternative being that all data is fetched for a query on the initial search.
+- **Cache**: As of right now, only the first set of search results gets cached. From there, you fetch additional data when you interact with pagination. I saw the alternative being that all data is fetched for a query on the initial search.
   But, because a search can return thousands of gifs, this would introduce some performance issues.
 
-- Pagination: I decided to disable the pagination component while gifs are loading. This is to avoid paginating through and making new API calls while data is still loading.
+- **Pagination**: I decided to disable the pagination component while gifs are loading. This is to avoid paginating through and making new API calls while data is still loading.
 
-- UI: the app should be mobile friendly.
+- **UI**: the app should be mobile friendly.
 
 ## Additional Notes
 
