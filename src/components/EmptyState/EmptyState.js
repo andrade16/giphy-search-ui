@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import ImageSearchIcon from "@material-ui/icons/ImageSearch";
-import "../EmptyState/EmptyState.css";
+import "./EmptyState.css";
 
 const EmptyState = () => {
   return (

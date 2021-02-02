@@ -1,4 +1,4 @@
-import {ITEMS_PER_PAGE} from "../utils/constants";
+import { ITEMS_PER_PAGE } from "../utils/constants";
 const GIPHY_API_KEY = "brXMsD0cTFgrd7yQh6u17ilSMIhDz2t9";
 const GIPHY_SEARCH_URL = "https://api.giphy.com/v1/gifs/search";
 

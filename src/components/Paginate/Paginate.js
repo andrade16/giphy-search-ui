@@ -1,9 +1,14 @@
 import React from "react";
 import Pagination from "@material-ui/lab/Pagination";
-import './Paginate.css';
+import "./Paginate.css";
 
-const Paginate = ({ currentPage, itemsPerPage, totalItems, pageSelected }) => {
-
+const Paginate = ({
+  currentPage,
+  isLoading,
+  itemsPerPage,
+  totalItems,
+  pageSelected,
+}) => {
   const totalPages = totalItems.length !== 0 ? Math.ceil(totalItems / itemsPerPage) : 0;
 
   return (
@@ -16,6 +21,7 @@ const Paginate = ({ currentPage, itemsPerPage, totalItems, pageSelected }) => {
         count={totalPages}
         showFirstButton
         showLastButton
+        disabled={isLoading}
         onChange={(event, page) => pageSelected(page)}
       />
     </div>

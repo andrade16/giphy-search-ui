@@ -7,8 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
-import './Search.css';
-
+import "./Search.css";
 
 const Search = ({ handleQuery }) => {
   const [query, setQuery] = useState("");
@@ -18,7 +17,7 @@ const Search = ({ handleQuery }) => {
     handleQuery(query);
   };
 
-  const onKeyDown = (event) => {
+  const onKeyUp = (event) => {
     event.preventDefault();
     if (event.key === "Enter") {
       handleQuery(query);
@@ -55,7 +54,7 @@ const Search = ({ handleQuery }) => {
               id="search-input"
               inputProps={{ "aria-label": "search" }}
               onChange={(event) => setQuery(event.target.value)}
-              onKeyUp={onKeyDown}
+              onKeyUp={onKeyUp}
             />
           </div>
           <div>
@@ -64,7 +63,7 @@ const Search = ({ handleQuery }) => {
               type="submit"
               color="secondary"
               id="search-button"
-              endIcon={<SearchIcon/>}
+              endIcon={<SearchIcon />}
               onClick={onQuerySubmit}
             >
               Search

@@ -1,8 +1,8 @@
 .progress-placeholder {
-    height: 4px;
+  height: 4px;
 }
 
 .paginate-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
